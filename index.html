@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floxeen - Make Simple Cleaner</title>
+  <meta name="description" content="Floxeen - Cairan pembersih motor premium. Bikin motor kinclong lagi tanpa ribet." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0f6188;
+      --light: #f5f8fc;
+      --white: #ffffff;
+      --dark: #002b5b;
+    }
+    * {box-sizing: border-box; scroll-behavior: smooth;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      background: var(--white);
+      padding: 40px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header img {width: 140px;}
+    header h1 {margin: 10px 0 5px; color: var(--blue);}
+    header p {margin: 0; color: #444;}
+    .banner {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+      justify-content: center;
+    }
+    .banner img {
+      width: 90%;
+      max-width: 900px;
+      height: auto;
+      border-radius: 12px;
+      scroll-snap-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: zoomIn 1.2s ease-in-out;
+    }
+
+    /* Section styling */
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+      background: transparent;
+    }
+    section h2 {
+      color: var(--blue);
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .about p {
+      color: #444;
+      font-size: 16px;
+      animation: fadeUp 1s ease;
+      max-width: 880px;
+      margin: 12px auto 0 auto;
+    }
+
+    .reasons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .reason {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      width: 280px;
+      transition: 0.3s;
+      animation: fadeUp 1s ease;
+    }
+    .reason:hover {transform: translateY(-8px);}
+    .reason h3 {color: var(--blue); margin-top: 10px; font-size: 18px;}
+
+    .produk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .produk-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: 0.4s;
+      animation: zoomIn 1s ease;
+    }
+    .produk-card:hover {transform: scale(1.05);}
+    .produk-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .produk-card h3 {margin-top: 10px; color: var(--dark); font-size: 16px;}
+
+    .cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta a {
+      text-decoration: none;
+      background: var(--blue);
+      color: var(--white);
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+    .cta a:hover {
+      background: #0b4f70;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+      color: #555;
+      border-top: 1px solid #eee;
+    }
+    footer a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Animations */
+    @keyframes zoomIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      .banner img {height: auto; max-width: 95%;}
+      header img {width: 120px;}
+    }
+    @media (max-width: 520px) {
+      section {padding: 30px 16px;}
+      .produk-card h3 {font-size: 15px;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Floxeen Logo">
+    <h1>Floxeen</h1>
+    <p>Make Simple Cleaner</p>
+  </header>
+
+  <div class="banner" aria-label="Banner Floxeen">
+    <img src="Banner 1.jpg" alt="Banner 1">
+    <img src="Banner 2.jpg" alt="Banner 2">
+    <img src="Banner 3.jpg" alt="Banner 3">
+  </div>
+
+  <section class="about" id="about">
+    <h2>Tentang Kami</h2>
+    <p>Floxeen adalah cairan pembersih motor premium dengan formula konsentrat yang ampuh angkat kotoran tanpa merusak cat.
+      Dirancang untuk lo yang peduli tampilan, performa, dan kebersihan kendaraan.
+      Floxeen – Cairan pembersih motor premium, bikin motor kinclong lagi tanpa ribet.</p>
+  </section>
+
+  <section class="why">
+    <h2>Mengapa Pilih Floxeen?</h2>
+    <div class="reasons">
+      <div class="reason">
+        <h3>💧 Aman untuk Cat</h3>
+        <p>Formulanya lembut tapi kuat, gak bikin cat motor kusam atau belang.</p>
+      </div>
+      <div class="reason">
+        <h3>⚡ Bersih Kilat</h3>
+        <p>Satu semprotan langsung angkat debu dan noda membandel, tanpa perlu gosok berlebihan.</p>
+      </div>
+      <div class="reason">
+        <h3>✨ Hasil Kinclong</h3>
+        <p>Bikin motor lo keliatan baru lagi tiap kali dicuci.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="produk" id="produk">
+    <h2>Produk Kami</h2>
+    <div class="produk-grid">
+      <div class="produk-card"><img src="Bundling 1.jpg" alt="Bundling 1"><h3>Easy Clean Combo</h3></div>
+      <div class="produk-card"><img src="Bundling 2.jpg" alt="Bundling 2"><h3>Bundle Hemat</h3></div>
+      <div class="produk-card"><img src="Bundling 3.jpg" alt="Bundling 3"><h3>Special Pack</h3></div>
+      <div class="produk-card"><img src="Produk 1.jpg" alt="Produk 1"><h3>All Purpose Cleaner</h3></div>
+      <div class="produk-card"><img src="Produk 2.jpg" alt="Produk 2"><h3>Daily Foam Shampoo</h3></div>
+      <div class="produk-card"><img src="Produk 3.jpg" alt="Produk 3"><h3>Spons & Kit</h3></div>
+      <div class="produk-card"><img src="Produk 4.jpg" alt="Produk 4"><h3>Microfiber Premium</h3></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <a href="https://floxeen.my.canva.site/?brid=nz23LNVtyD83_hxqTfOm2Q" target="_blank">Shop Now</a>
+  </div>
+
+  <footer>
+    <p><strong>Hubungi Kami</strong></p>
+    <p>
+      Instagram: <a href="https://instagram.com/floxeen.id" target="_blank">@floxeen.id</a> |
+      Shopee: <a href="https://shopee.co.id/floxeen.id" target="_blank">floxeen.id</a>
+    </p>
+    <p>
+      WhatsApp: <a href="https://wa.me/62881010878926">0881-0108-78926</a> |
+      Email: <a href="mailto:floxeen.id@gmail.com">floxeen.id@gmail.com</a>
+    </p>
+    <p style="margin-top:15px;">&copy; 2025 Floxeen. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
